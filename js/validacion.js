@@ -6,6 +6,7 @@ function showAlertError() {
     document.getElementById("alert-danger").classList.add("show");
 }
 
+
 // Aca se valida el formulario de registro
 document.addEventListener("DOMContentLoaded", function() {
     const regBtn = document.getElementById("regBtn");
@@ -20,7 +21,15 @@ document.addEventListener("DOMContentLoaded", function() {
         const terminos = document.getElementById("terminos").checked;
 
 
-
-        
-         });
-});
+ // Chequea que se haya puesto la contra igual
+        if (password1 !== password2) {
+            showAlertError();
+            return;
+        }
+      
+      
+      
+      
+      
+      });
+  });
