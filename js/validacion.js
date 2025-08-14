@@ -1,6 +1,3 @@
-function showAlertSuccess() {
-    document.getElementById("alert-success").classList.add("show");
-}
 
 function showAlertError() {
     document.getElementById("alert-danger").classList.add("show");
@@ -19,7 +16,20 @@ document.addEventListener("DOMContentLoaded", function() {
         const password1 = document.getElementById("password1").value;
         const password2 = document.getElementById("password2").value;
         const terminos = document.getElementById("terminos").checked;
+      
+      
+ // Chequea que no este nignuno vacio
+        if (!nombre || !apellido || !email || !password1 || !password2) {
+            showAlertError();
+            return;
+        }
 
+
+        // Chequea la contra sea al menos de 6 caracteres
+        if (password1.length < 6) {
+            showAlertError();
+            return;
+        }
 
  // Chequea que se haya puesto la contra igual
         if (password1 !== password2) {
@@ -33,3 +43,4 @@ document.addEventListener("DOMContentLoaded", function() {
       
       });
   });
+
